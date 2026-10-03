@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aurora | Admin Dashboard</title>
+
+    <!-- Admin CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ADMIN LAYOUT
+         ===================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside class="admin-sidebar">
+
+
+            <!-- ================= BRAND ================= -->
+
+            <a
+                href="index.html"
+                class="admin-brand"
+            >
+
+                <div class="admin-brand-logo">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Aurora
+                    </strong>
+
+                    <span>
+                        ADMIN
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- ================= NAVIGATION ================= -->
+
+            <nav class="admin-nav">
+
+
+                <p class="nav-label">
+                    MANAGEMENT
+                </p>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link active"
+                    data-section="overview"
+                >
+
+                    <span class="nav-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link"
+                    data-section="vendors"
+                >
+
+                    <span class="nav-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        Vendors
+                    </span>
+
+                    <span
+                        class="nav-count"
+                        id="pendingCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link"
+                    data-section="users"
+                >
+
+                    <span class="nav-icon">
+                        ◯
+                    </span>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link"
+                    data-section="bookings"
+                >
+
+                    <span class="nav-icon">
+                        □
+                    </span>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <p class="nav-label secondary-label">
+                    PLATFORM
+                </p>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link"
+                    data-section="services"
+                >
+
+                    <span class="nav-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Services
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="admin-nav-link"
+                    data-section="settings"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- ================= SIDEBAR BOTTOM ================= -->
+
+            <div class="sidebar-bottom">
+
+
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+
+                    <span>
+                        ←
+                    </span>
+
+                    Back to Aurora
+
+                </a>
+
+
+                <div class="admin-user-mini">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Aurora Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN AREA
+             ================================================= -->
+
+        <main class="admin-main">
+
+
+            <!-- =================================================
+                 TOP HEADER
+                 ================================================= -->
+
+            <header class="admin-header">
+
+
+                <div class="header-title">
+
+                    <span class="eyebrow">
+                        AURORA CONTROL CENTER
+                    </span>
+
+                    <h1 id="pageTitle">
+                        Overview
+                    </h1>
+
+                </div>
+
+
+                <div class="header-actions">
+
+
+                    <button
+                        type="button"
+                        class="header-icon-btn"
+                        id="refreshButton"
+                        title="Refresh data"
+                    >
+                        ↻
+                    </button>
+
+
+                    <div class="header-admin">
+
+                        <div class="header-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <span>
+                                Platform Manager
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 CONTENT
+                 ================================================= -->
+
+            <div class="admin-content">
+
+
+                <!-- =================================================
+                     OVERVIEW SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section active"
+                    id="overviewSection"
+                >
+
+
+                    <div class="welcome-row">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                PLATFORM OVERVIEW
+                            </span>
+
+                            <h2>
+                                Good to see you.
+                            </h2>
+
+                            <p>
+                                Monitor Aurora's marketplace,
+                                vendor applications and platform
+                                activity from one place.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="primary-action"
+                            data-open-section="vendors"
+                        >
+
+                            Review Vendors
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ================= STAT CARDS ================= -->
+
+                    <div class="stats-grid">
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-top">
+
+                                <span class="stat-label">
+                                    TOTAL VENDORS
+                                </span>
+
+                                <span class="stat-icon">
+                                    ◈
+                                </span>
+
+                            </div>
+
+                            <strong
+                                class="stat-value"
+                                id="totalVendors"
+                            >
+                                0
+                            </strong>
+
+                            <p>
+                                Registered on Aurora
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="stat-card pending-card">
+
+                            <div class="stat-top">
+
+                                <span class="stat-label">
+                                    PENDING
+                                </span>
+
+                                <span class="stat-icon">
+                                    ◷
+                                </span>
+
+                            </div>
+
+                            <strong
+                                class="stat-value"
+                                id="pendingVendors"
+                            >
+                                0
+                            </strong>
+
+                            <p>
+                                Awaiting verification
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-top">
+
+                                <span class="stat-label">
+                                    APPROVED
+                                </span>
+
+                                <span class="stat-icon">
+                                    ✓
+                                </span>
+
+                            </div>
+
+                            <strong
+                                class="stat-value"
+                                id="approvedVendors"
+                            >
+                                0
+                            </strong>
+
+                            <p>
+                                Active marketplace vendors
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-top">
+
+                                <span class="stat-label">
+                                    REJECTED
+                                </span>
+
+                                <span class="stat-icon">
+                                    ×
+                                </span>
+
+                            </div>
+
+                            <strong
+                                class="stat-value"
+                                id="rejectedVendors"
+                            >
+                                0
+                            </strong>
+
+                            <p>
+                                Applications not approved
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ================= RECENT APPLICATIONS ================= -->
+
+                    <div class="dashboard-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="section-kicker">
+                                    VENDOR PIPELINE
+                                </span>
+
+                                <h3>
+                                    Recent Applications
+                                </h3>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="text-action"
+                                data-open-section="vendors"
+                            >
+
+                                View All
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="recent-vendors"
+                            id="recentVendors"
+                        >
+
+                            <div class="loading-state">
+
+                                <div class="loading-spinner"></div>
+
+                                <p>
+                                    Loading vendor applications...
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     VENDORS SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section"
+                    id="vendorsSection"
+                >
+
+
+                    <div class="section-page-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                MARKETPLACE MANAGEMENT
+                            </span>
+
+                            <h2>
+                                Vendor Applications
+                            </h2>
+
+                            <p>
+                                Review vendors who want to join
+                                the Aurora marketplace.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary-action"
+                            id="vendorRefreshButton"
+                        >
+
+                            ↻ Refresh
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ================= FILTER BAR ================= -->
+
+                    <div class="vendor-toolbar">
+
+
+                        <div class="search-box">
+
+                            <span>
+                                ⌕
+                            </span>
+
+                            <input
+                                type="text"
+                                id="vendorSearch"
+                                placeholder="Search vendors..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <div class="status-filters">
+
+                            <button
+                                type="button"
+                                class="filter-btn active"
+                                data-status="all"
+                            >
+                                All
+                            </button>
+
+                            <button
+                                type="button"
+                                class="filter-btn"
+                                data-status="pending"
+                            >
+                                Pending
+                            </button>
+
+                            <button
+                                type="button"
+                                class="filter-btn"
+                                data-status="approved"
+                            >
+                                Approved
+                            </button>
+
+                            <button
+                                type="button"
+                                class="filter-btn"
+                                data-status="rejected"
+                            >
+                                Rejected
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ================= VENDOR LIST ================= -->
+
+                    <div
+                        class="vendor-list"
+                        id="vendorList"
+                    >
+
+                        <div class="loading-state">
+
+                            <div class="loading-spinner"></div>
+
+                            <p>
+                                Loading vendors...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     USERS SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section"
+                    id="usersSection"
+                >
+
+                    <div class="empty-section">
+
+                        <div class="empty-icon">
+                            ◯
+                        </div>
+
+                        <span class="section-kicker">
+                            COMING NEXT
+                        </span>
+
+                        <h2>
+                            User Management
+                        </h2>
+
+                        <p>
+                            User accounts, activity and account
+                            management will appear here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     BOOKINGS SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section"
+                    id="bookingsSection"
+                >
+
+                    <div class="empty-section">
+
+                        <div class="empty-icon">
+                            □
+                        </div>
+
+                        <span class="section-kicker">
+                            COMING NEXT
+                        </span>
+
+                        <h2>
+                            Booking Monitoring
+                        </h2>
+
+                        <p>
+                            Booking activity and platform
+                            transactions will appear here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SERVICES SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section"
+                    id="servicesSection"
+                >
+
+                    <div class="empty-section">
+
+                        <div class="empty-icon">
+                            ◇
+                        </div>
+
+                        <span class="section-kicker">
+                            COMING NEXT
+                        </span>
+
+                        <h2>
+                            Service Management
+                        </h2>
+
+                        <p>
+                            Manage Aurora's service categories
+                            and marketplace offerings here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SETTINGS SECTION
+                     ================================================= -->
+
+                <section
+                    class="admin-section"
+                    id="settingsSection"
+                >
+
+                    <div class="empty-section">
+
+                        <div class="empty-icon">
+                            ⚙
+                        </div>
+
+                        <span class="section-kicker">
+                            PLATFORM
+                        </span>
+
+                        <h2>
+                            Admin Settings
+                        </h2>
+
+                        <p>
+                            Platform configuration and administrator
+                            settings will appear here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         VENDOR DETAILS MODAL
+         ===================================================== -->
+
+    <div
+        class="vendor-modal"
+        id="vendorModal"
+        aria-hidden="true"
+    >
+
+
+        <div class="modal-backdrop"></div>
+
+
+        <div class="modal-card">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeVendorModal"
+                aria-label="Close vendor details"
+            >
+                ×
+            </button>
+
+
+            <div
+                class="modal-content"
+                id="vendorModalContent"
+            >
+
+                <!-- Vendor details loaded by JavaScript -->
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Admin JavaScript -->
+    <script src="../js/admin.js"></script>
+
+
+</body>
+
+</html>
